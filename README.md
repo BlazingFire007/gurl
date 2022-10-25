@@ -3,6 +3,7 @@
 A go curl-like program to send http request from the command line.
 
 - [gurl 0.1.0](#gurl-010)
+  - [Why Should I Use This Instead of `curl` or `wget`?](#why-should-i-use-this-instead-of-curl-or-wget)
   - [Installation:](#installation)
     - [Linux/Macos](#linuxmacos)
     - [Windows](#windows)
@@ -10,6 +11,13 @@ A go curl-like program to send http request from the command line.
     - [Options](#options)
   - [Bugs](#bugs)
   - [Building](#building)
+
+## Why Should I Use This Instead of `curl` or `wget`?
+You should not.
+
+This was a fun project I made to better learn golang.
+
+It has **no** advantages over `curl` or `wget` and several disadvantages.
 
 ## Installation:
 `gurl` is precompiled for several common platforms and architecturs.
