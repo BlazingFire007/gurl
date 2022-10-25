@@ -1,14 +1,5 @@
-# get default shell
+#! bash
 DEFAULT_SHELL=$(basename $SHELL)
-
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BRED='\033[1;31m'
-BGREEN='\033[1;32m'
-BYELLOW='\033[1;33m'
-NC='\033[0m' # No Color
-BOLD='\033[1m' # BOLD NO COLOR
 
 # decide if curl or wget should be used
 DOWNLOADER=""
@@ -21,7 +12,7 @@ else
     echo "[INFO]: WGET INSTALLED"
     DOWNLOADER="$(which wget)"
   else
-    echo "${BRED}[ERROR]: PLEASE INSTALL CURL OR WGET"
+    echo "$[ERROR]: PLEASE INSTALL CURL OR WGET"
     exit 1
   fi
 fi
@@ -33,7 +24,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     PLATFORM='macos'
 else
-    echo "${BRED}[ERROR]: UNKNOWN OR UNSUPPORTED OS: ${RED}$OSTYPE"
+    echo "[ERROR]: UNKNOWN OR UNSUPPORTED OS: $OSTYPE"
     exit 1
 fi
 ARCH='UNKNOWN'
@@ -42,12 +33,12 @@ if [[ "$(uname -m)" == "x86_64" ]]; then
 elif [[ "$(uname -m)" == "i386" ]]; then
     ARCH='32bit'
 else
-    echo "${BRED}[ERROR]: UNKNOWN OR UNSUPPORTED ARCH: ${RED}$(uname -m)"
+    echo "[ERROR]: UNKNOWN OR UNSUPPORTED ARCH: $(uname -m)"
     exit 1
 fi
 echo ""
-echo "${BOLD}[INFO]: PLATFORM DETECTED: ${BGREEN}$PLATFORM${NC}"
-echo "${BOLD}[INFO]: ARCHITECTURE DETECTED: ${BGREEN}$ARCH"
+echo "[INFO]: PLATFORM DETECTED: $PLATFORM$"
+echo "[INFO]: ARCHITECTURE DETECTED: $ARCH"
 
 
 # check if default shell has a .rc file, if so, make a backup
@@ -70,7 +61,7 @@ else
     wget -q -O "gurl" "https://github.com/BlazingFire007/gurl/releases/download/v0.1.0/gurl-${PLATFORM}-${ARCH}"
 fi
 
-echo "${BOLD}[INFO]: DOWNLOAD COMPLETE"
+echo "[INFO]: DOWNLOAD COMPLETE"
 # make executable and move to ~/.gurl
 chmod +x "./gurl"
 mv "./gurl" "${HOME}/.gurl"
@@ -82,9 +73,9 @@ echo "export PATH=\"${HOME}/.gurl:\$PATH\"" >> "${RC_FILE}"
 cd ..
 rm -rf tmpgurlinstall
 
-echo "${BGREEN}[INFO]: INSTALLATION COMPLETE${NC}"
-echo "${NC}[INFO]: INSTALLED GURL TO ${HOME}/.gurl"
-echo "${NC}[INFO]: ADDED ${HOME}/.gurl TO PATH"
-echo "${NC}[INFO]: BACKED UP ${RC_FILE} TO ${RC_FILE}.before_gurl"
+echo "[INFO]: INSTALLATION COMPLETE$"
+echo "$[INFO]: INSTALLED GURL TO ${HOME}/.gurl"
+echo "$[INFO]: ADDED ${HOME}/.gurl TO PATH"
+echo "$[INFO]: BACKED UP ${RC_FILE} TO ${RC_FILE}.before_gurl"
 echo ""
-echo "${BOLD}PLEASE RESTART YOUR TERMINAL OR RUN '${BGREEN}source ${RC_FILE}${NC}${BOLD}' TO USE GURL"
+echo "PLEASE RESTART YOUR TERMINAL OR RUN 'source ${RC_FILE}$' TO USE GURL"
