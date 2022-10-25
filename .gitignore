@@ -3,3 +3,4 @@ gurl.exe
 windows/
 linux/
 macos/
+.DS_Store
