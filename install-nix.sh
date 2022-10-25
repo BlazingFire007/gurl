@@ -48,9 +48,6 @@ fi
 echo ""
 echo "${BOLD}[INFO]: PLATFORM DETECTED: ${BGREEN}$PLATFORM${NC}"
 echo "${BOLD}[INFO]: ARCHITECTURE DETECTED: ${BGREEN}$ARCH"
-echo "${YELLOW}[WARNING]: IF THIS IS INCORRECT PLEASE EXIT THIS PROGRAM"
-echo "${YELLOW}[WARNING]: OTHERWISE ${BGREEN}PRESS ENTER TO CONTINUE${NC}"
-read
 
 
 # check if default shell has a .rc file, if so, make a backup
