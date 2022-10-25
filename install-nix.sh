@@ -37,7 +37,7 @@ else
     exit 1
 fi
 echo ""
-echo "[INFO]: PLATFORM DETECTED: $PLATFORM$"
+echo "[INFO]: PLATFORM DETECTED: $PLATFORM"
 echo "[INFO]: ARCHITECTURE DETECTED: $ARCH"
 
 
@@ -73,9 +73,9 @@ echo "export PATH=\"${HOME}/.gurl:\$PATH\"" >> "${RC_FILE}"
 cd ..
 rm -rf tmpgurlinstall
 
-echo "[INFO]: INSTALLATION COMPLETE$"
+echo "[INFO]: INSTALLATION COMPLETE"
 echo "$[INFO]: INSTALLED GURL TO ${HOME}/.gurl"
 echo "$[INFO]: ADDED ${HOME}/.gurl TO PATH"
 echo "$[INFO]: BACKED UP ${RC_FILE} TO ${RC_FILE}.before_gurl"
 echo ""
-echo "PLEASE RESTART YOUR TERMINAL OR RUN 'source ${RC_FILE}$' TO USE GURL"
+echo "PLEASE RESTART YOUR TERMINAL OR RUN 'source ${RC_FILE}' TO USE GURL"
