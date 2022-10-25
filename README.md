@@ -14,6 +14,8 @@ A go curl-like program to send http request from the command line.
 ## Installation:
 `gurl` is precompiled for several common platforms and architecturs.
 
+**NOTE: installation scripts likely won't work for ARM devices.**
+
 
 ### Linux/Macos
 There is an install script for those on linux or macos.
@@ -22,8 +24,11 @@ curl https://raw.githubusercontent.com/BlazingFire007/gurl/main/install-nix.sh |
 ```
 
 ### Windows
-There is a batch (cmd.exe) script for those on windows
-
+There is a batch (cmd.exe) script for those on windows.
+```bat
+powershell -Command wget -UseBasicParsing -o install-windows.bat https://raw.githubusercontent.com/BlazingF
+ire007/gurl/main/install-windows.bat && call install-windows.bat && del install-windows.bat
+```
 
 ## Usgae
 It's important to put any command line options **BEFORE** the url.

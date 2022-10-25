@@ -35,4 +35,5 @@ goto end
 
 :end
 echo Installation complete
+echo Please restart your terminal to use gurl
 pause
