@@ -6,6 +6,9 @@ A go curl-like program to send http request from the command line.
   - [Installation:](#installation)
     - [Linux/Macos](#linuxmacos)
     - [Windows](#windows)
+  - [Usgae](#usgae)
+    - [Options](#options)
+  - [Bugs](#bugs)
   - [Building](#building)
 
 ## Installation:
@@ -20,6 +23,48 @@ curl https://raw.githubusercontent.com/BlazingFire007/gurl/main/install-nix.sh |
 
 ### Windows
 There is a batch (cmd.exe) script for those on windows
+
+
+## Usgae
+It's important to put any command line options **BEFORE** the url.
+
+`gurl [options...] url`
+
+Please do not use `-l, --loop` unless you really know what you're doing.
+`-n, --times` will not wait for the previous request to complete before sending the next.
+
+### Options
+  - -A, --user-agent <name>
+    - Send User-Agent <name> to server (default "gurl/0.1.0")
+  - -H, --headers
+    - Set headers: "HEADER1::VAL1|||HEADER2::VAL2"
+  - -c, --cookie
+    - set cookie from FILE
+  - -d, --data
+    - HTTP POST data
+  - -h, --help
+    - Show this screen
+  - -i, --include
+    - Include protocol response headers in the output
+  - -l, --loop
+    - Send request until program error. (DO NOT USE: IGNORES ERRORS)
+  - -n, --times int
+    - Number of times to send the request. Max 10,000. (WARNING: ASYNC) (default 1)
+  - -o, --output
+    - Write to file instead of stdout
+  - -p, --post
+    - Send POST request
+  - -s, --silent
+    - Silent
+  - -u, --upload
+    - Transfer local FILE to destination
+  - -v, --version
+    - Display the version of this program
+
+## Bugs
+Known bugs:
+- downloading a file (with `-o, --output`) is very unstable and often does not work.
+- urls that start with "http" cannot be prefixed with "http://" or "https://"
 
 ## Building
 You can build for your platform by cloning this repo, and running `go build .`
